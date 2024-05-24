@@ -1,9 +1,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using Todo.ViewModels;
+using CostAnalyzer.ViewModels;
 
-namespace Todo
+namespace CostAnalyzer
 {
     public class ViewLocator : IDataTemplate
     {

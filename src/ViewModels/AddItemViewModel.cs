@@ -1,9 +1,9 @@
 ﻿using System.Reactive;
 using System.Reactive.Linq;
 using ReactiveUI;
-using Todo.Models;
+using CostAnalyzer.Models;
 
-namespace Todo.ViewModels
+namespace CostAnalyzer.ViewModels
 {
     class AddItemViewModel : ViewModelBase
     {

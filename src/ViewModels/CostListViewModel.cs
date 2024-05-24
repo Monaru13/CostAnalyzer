@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Todo.Models;
+using CostAnalyzer.Models;
 
-namespace Todo.ViewModels
+namespace CostAnalyzer.ViewModels
 {
     public class CostListViewModel : ViewModelBase
     {

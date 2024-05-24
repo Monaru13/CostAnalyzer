@@ -1,4 +1,4 @@
-﻿namespace Todo.Models
+﻿namespace CostAnalyzer.Models
 {
     public class CostItem
     {

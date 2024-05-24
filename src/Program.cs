@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.ReactiveUI;
 
-namespace Todo
+namespace CostAnalyzer
 {
     class Program
     {

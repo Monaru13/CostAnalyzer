@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ReactiveUI;
 
-namespace Todo.ViewModels
+namespace CostAnalyzer.ViewModels
 {
     public class ViewModelBase : ReactiveObject
     {

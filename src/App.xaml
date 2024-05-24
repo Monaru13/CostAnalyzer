@@ -1,7 +1,7 @@
 ﻿<Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Todo"
-             x:Class="Todo.App">
+             xmlns:local="clr-namespace:CostAnalyzer"
+             x:Class="CostAnalyzer.App">
     <Application.DataTemplates>
         <local:ViewLocator/>
     </Application.DataTemplates>

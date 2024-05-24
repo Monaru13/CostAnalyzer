@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Todo.Views
+namespace CostAnalyzer.Views
 {
     public class CostListView : UserControl
     {

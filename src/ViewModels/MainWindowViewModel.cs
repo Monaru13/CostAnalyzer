@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Reactive.Linq;
 using ReactiveUI;
-using Todo.Models;
-using Todo.Services;
+using CostAnalyzer.Models;
+using CostAnalyzer.Services;
 
-namespace Todo.ViewModels
+namespace CostAnalyzer.ViewModels
 {
     class MainWindowViewModel : ViewModelBase
     {
         ViewModelBase content;
 
-        public MainWindowViewModel(Database db)
+        public MainWindowViewModel(CostItemsRepository db)
         {
             Content = List = new CostListViewModel(db.GetItems());
         }

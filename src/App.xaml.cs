@@ -1,11 +1,11 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Todo.Services;
-using Todo.ViewModels;
-using Todo.Views;
+using CostAnalyzer.Services;
+using CostAnalyzer.ViewModels;
+using CostAnalyzer.Views;
 
-namespace Todo
+namespace CostAnalyzer
 {
     public class App : Application
     {
@@ -20,7 +20,7 @@ namespace Todo
 
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                var db = new Database();
+                var db = new CostItemsRepository();
 
                 desktop.MainWindow = new MainWindow
                 {
