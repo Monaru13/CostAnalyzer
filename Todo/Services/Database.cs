@@ -1,9 +1,9 @@
-﻿using CostAnalyzer.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Todo.Models;
 
-namespace CostAnalyzer.Services
+namespace Todo.Services
 {
-    public class CostItemsRepository
+    public class Database
     {
         public IEnumerable<CostItem> GetItems() => new[]
         {
