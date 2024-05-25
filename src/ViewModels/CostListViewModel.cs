@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using CostAnalyzer.Models;
 using CostAnalyzer.Services;
 
@@ -13,6 +14,6 @@ namespace CostAnalyzer.ViewModels
             _repository = repository;
         }
 
-        public ObservableCollection<CostItem> Items => _repository.GetItems();
+        public IEnumerable<CostItem> Items => _repository.GetItems();
     }
 }
