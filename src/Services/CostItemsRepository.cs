@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using CostAnalyzer.Models;
 
@@ -7,7 +8,7 @@ namespace CostAnalyzer.Services
 {
     public class CostItemsRepository
     {
-        private List<CostItem> items = new List<CostItem>()
+        private ObservableCollection<CostItem> items = new ObservableCollection<CostItem>()
         {
             new CostItem()
             {
@@ -32,7 +33,7 @@ namespace CostAnalyzer.Services
             }
         };
         
-        public IEnumerable<CostItem> GetItems() => items;
+        public ObservableCollection<CostItem> GetItems() => items;
 
         public CostItem GetItemById(Guid id) => items.FirstOrDefault(x => x.Id.Equals(id));
 
