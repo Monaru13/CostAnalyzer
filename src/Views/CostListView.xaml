@@ -71,6 +71,8 @@
                 <!--</Border>-->
               </Button>
               <Button
+                Command="{Binding $parent[Window].DataContext.RemoveItem}"
+                CommandParameter="{Binding Id}"
                 Background="Pink"
                 BorderBrush="Transparent"
                 FontWeight="ExtraBlack"
