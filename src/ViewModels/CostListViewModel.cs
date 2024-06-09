@@ -18,16 +18,15 @@ namespace CostAnalyzer.ViewModels
             _repository = repository;
 
             SelectedTag = Tags.FirstOrDefault();
+            SelectedMonth = Months.FirstOrDefault();
         }
 
         IEnumerable<CostItem> items;
         public IEnumerable<CostItem> Items
         {
-            get => _repository.GetItems(selectedTag);
+            get => _repository.GetItems(selectedTag, selectedMonth);
             set => this.RaiseAndSetIfChanged(ref items, value);
         }
-
-        //public IEnumerable<CostItem> Items => _repository.GetItems(selectedTag);
 
         string selectedTag;
         public string SelectedTag
@@ -35,23 +34,41 @@ namespace CostAnalyzer.ViewModels
             get => selectedTag;
             set
             {
-                /*var tags = _repository.UsedTags;
-                var newSelectedTag = tags.Contains(value) ? value :tags.FirstOrDefault();*/
-
                 this.RaiseAndSetIfChanged(ref selectedTag, value);
-                Items = _repository.GetItems(value);
-                CostSum = Sum;
+                UpdateList(value, selectedMonth);
+            }
+        }
+
+        string selectedMonth;
+        public string SelectedMonth
+        {
+            get => selectedMonth;
+            set
+            {
+                this.RaiseAndSetIfChanged(ref selectedMonth, value);
+                UpdateList(selectedTag, value);
             }
         }
 
         IEnumerable<string> tags;
         public IEnumerable<string> Tags
         {
-            get => _repository.UsedTags;
+            get => _repository.GetTagsFilters(selectedMonth);
             set
             {
                 this.RaiseAndSetIfChanged(ref tags, value);
                 SelectedTag = Tags.FirstOrDefault();
+            }
+        }
+
+        IEnumerable<string> months;
+        public IEnumerable<string> Months
+        {
+            get => _repository.GetMonthsFilters(selectedTag);
+            set
+            {
+                this.RaiseAndSetIfChanged(ref months, value);
+                SelectedMonth = months.FirstOrDefault();
             }
         }
 
@@ -64,9 +81,16 @@ namespace CostAnalyzer.ViewModels
 
         public void ClearFilters()
         {
-            Tags = _repository.UsedTags;
+            Tags = _repository.GetTagsFilters(null);
+            Months = _repository.GetMonthsFilters(null);
         }
 
-        private decimal Sum => _repository.GetItemsCost(SelectedTag);
+        private void UpdateList(string tagFilter, string monthFilter)
+        {
+            Items = _repository.GetItems(tagFilter, monthFilter);
+            CostSum = Sum;
+        }
+
+        private decimal Sum => _repository.GetItemsCost(SelectedTag, SelectedMonth);
     }
 }
