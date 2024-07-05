@@ -45,7 +45,7 @@
       Background="AliceBlue"
       DockPanel.Dock="Bottom"
       Command="{Binding $parent[Window].DataContext.AddItem}">
-      Add an item
+      Dodaj
     </Button>
 
     <Border DockPanel.Dock="Top" Margin="10,0,10,10" Background="AliceBlue" CornerRadius="10">
@@ -65,11 +65,9 @@
                 HorizontalAlignment="Stretch" 
                 Margin="10,0,10,10" Padding="0" 
                 HorizontalContentAlignment="Left">
-                <!--<Border Margin="10,0,10,10" BorderBrush="Gray" BorderThickness="1" CornerRadius="10">-->
                 <StackPanel Orientation="Vertical" Margin="10" HorizontalAlignment="Stretch">
                   <TextBlock TextWrapping="Wrap" Text="{Binding Description}"/>
                   <TextBlock Grid.Column="0" Margin="0,5,0,0" FontWeight="Black" Text="{Binding Cost, StringFormat={}{0:C}}"/>
-                  <!--<ItemsControl Items="{Binding Tags}">-->
                   <ItemsControl Items="{Binding Tags}">
                     <ItemsControl.ItemsPanel>
                       <ItemsPanelTemplate>
@@ -86,7 +84,6 @@
                   </ItemsControl>
                   <TextBlock Grid.Column="0" Margin="0,5,0,0" FontSize="10" FontWeight="Light" Text="{Binding CreatedAt}"/>
                 </StackPanel>
-                <!--</Border>-->
               </Button>
               <Button
                 Command="{Binding $parent[Window].DataContext.RemoveItem}"
@@ -105,17 +102,9 @@
                 HorizontalContentAlignment="Center"
                 CornerRadius="100"/>
             </Grid>
-
-
-            <!--<CheckBox Margin="4"
-                    IsChecked="{Binding IsChecked}"
-                    Content="{Binding Description}"/>-->
           </DataTemplate>
         </ItemsControl.ItemTemplate>
       </ItemsControl>
     </ScrollViewer>
-    
-    
   </DockPanel>
-  
 </UserControl>
